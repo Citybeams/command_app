@@ -1,0 +1,35 @@
+<div class="subjects index">
+  <h2>Subjects</h2>
+
+
+  <table class="listing" summary="Subject list">
+    <tr class="header">
+      <th>&nbsp;</th>
+      <th>Subject</th>
+    </tr>
+
+
+
+      <td class="actions">
+        <%= link_to("Add New Subject", '#', :class => 'action new') %>
+        <%= link_to("Show", '#', :class => 'action show') %>
+        <%= link_to("Edit", '#', :class => 'action edit') %>
+        <%= link_to("Delete", '#', :class => 'action delete') %>
+      </td>
+    </tr>
+  </div>
+
+<% @subjects.find_by_id(1) %>
+<%= link_to("Sublime", {:action => 'show', :id => subject.id}, :class => 'action show') %>
+
+
+<% @subjects.find_by_id(2) %>
+<%= link_to("Git", {:action => 'show', :id => subject.id}, :class => 'action show') %>
+
+
+
+
+
+
+
+
