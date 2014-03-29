@@ -19,12 +19,14 @@
     </tr>
   </div>
 
-<% @subjects.find_by_id(1) %>
-<%= link_to("Sublime", {:action => 'show', :id => subject.id}, :class => 'action show') %>
 
+<%= form_for(:subject, :url => {:action => 'create'}) do |f| %>
 
-<% @subjects.find_by_id(2) %>
-<%= link_to("Git", {:action => 'show', :id => subject.id}, :class => 'action show') %>
+<%=f.text_field(:subject) %>
+
+<%= submit_tag("Create Subject") %>
+<% end %>
+
 
 
 

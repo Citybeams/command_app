@@ -1,6 +1,7 @@
 CommandsApp::Application.routes.draw do
-  root "demo#index"
-   # get "demo/index"
+  root 'subjects#index'
+  get :index
+
   match ':controller(/:action(/:id))', :via => :get #make sure this is always at bottom casscade!
 
 

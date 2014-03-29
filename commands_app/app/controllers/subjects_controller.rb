@@ -1,6 +1,5 @@
 class SubjectsController < ApplicationController
 
-  layout false
 
 
   def index
@@ -11,6 +10,16 @@ class SubjectsController < ApplicationController
   end
 
   def new
+    @subject = Subject.new
+  end
+
+  def create
+    @subject = Subject.new(params.require(:subject))
+    if @subject.save
+      redirect_to(:action => 'index')
+    else
+      render('new')
+    end
   end
 
   def edit
@@ -18,4 +27,6 @@ class SubjectsController < ApplicationController
 
   def delete
   end
-end
+
+
+  end
