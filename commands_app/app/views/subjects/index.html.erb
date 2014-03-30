@@ -1,5 +1,7 @@
 <h1>Subjects</h1>
 
+<%= link_to "Sign Up", new_user_path %>
+
 
 <%= form_for(:subject, url: subjects_path) do |f| %>
 <%= f.text_field(:subject) %>
