@@ -1,31 +1,14 @@
-<div class="subjects index">
-  <h2>Subjects</h2>
+<h1>Subjects</h1>
 
 
-  <table class="listing" summary="Subject list">
-    <tr class="header">
-      <th>&nbsp;</th>
-      <th>Subject</th>
-    </tr>
-
-
-
-      <td class="actions">
-        <%= link_to("Add New Subject", '#', :class => 'action new') %>
-        <%= link_to("Show", '#', :class => 'action show') %>
-        <%= link_to("Edit", '#', :class => 'action edit') %>
-        <%= link_to("Delete", '#', :class => 'action delete') %>
-      </td>
-    </tr>
-  </div>
-
-
-<%= form_for(:subject, :url => {:action => 'create'}) do |f| %>
-
-<%=f.text_field(:subject) %>
-
+<%= form_for(:subject, url: subjects_path) do |f| %>
+<%= f.text_field(:subject) %>
 <%= submit_tag("Create Subject") %>
 <% end %>
+
+<% @subjects.each do |subject|  %>
+  <%= link_to(subject.subject, subject) %>
+  <% end %>
 
 
 

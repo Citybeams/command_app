@@ -1,2 +1,16 @@
 <h1>Subjects#show</h1>
-<p>Find me in app/views/subjects/show.html.erb</p>
+
+
+<%= form_for(:quiz, url: quiz_path) do |f| %>
+<%= f.text_field(:quiz_question) %>
+<%= submit_tag("Create Command Description") %>
+<% end %>
+
+
+
+
+<% @quiz_questions.each do |question|  %>
+  <%= question.quiz_question %>
+  <% end %>
+
+<!-- .quiz question is the column name -->

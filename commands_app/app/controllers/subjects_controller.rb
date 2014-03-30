@@ -1,12 +1,12 @@
 class SubjectsController < ApplicationController
 
 
-
   def index
     @subjects = Subject.all
   end
 
   def show
+    @quiz_questions = Quiz.all
   end
 
   def new
@@ -14,11 +14,11 @@ class SubjectsController < ApplicationController
   end
 
   def create
-    @subject = Subject.new(params.require(:subject))
-    if @subject.save
-      redirect_to(:action => 'index')
+    subject = Subject.new(subject_params) #creates subject object, subject_params calls subject params in private
+    if subject.save
+      redirect_to(:action => 'index') #redirect to index methid
     else
-      render('new')
+      redirect_to(:action => 'new') #redirect to new method
     end
   end
 
@@ -26,6 +26,12 @@ class SubjectsController < ApplicationController
   end
 
   def delete
+  end
+
+  private #hides from outside world
+
+  def subject_params
+    params.require(:subject).permit(:subject) #requires model subject and column subject
   end
 
 
