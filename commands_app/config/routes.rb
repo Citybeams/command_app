@@ -1,4 +1,6 @@
 CommandsApp::Application.routes.draw do
+  resources :users
+
   root 'subjects#index'
   # get "/index"
 
