@@ -1,0 +1,18 @@
+form_for(:quiz, :url => quiz_path) do |f|
+  f.label 'Question Text'
+  f.text_field :question_text
+
+  f.label 'Correct Answer'
+  f.text_field :correct_answer
+
+  f.label 'Choice 1'
+  f.text_field :name => :answer_1
+  f.label 'Choice 2'
+  f.text_field :name => :answer_2
+  f.label 'Choice 3'
+  f.text_field :name => :answer_3
+  f.label 'Choice 4'
+  f.text_field :name => :answer_4
+
+  f.submit 'Submit'
+end

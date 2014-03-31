@@ -1,0 +1,25 @@
+<h1>Subjects</h1>
+
+<%= link_to "Sign Up", new_user_path %>
+<%= link_to "Log In", user_sessions_path %>
+
+
+
+<%= form_for(:subject, url: subjects_path) do |f| %>
+<%= f.text_field(:subject) %>
+<%= submit_tag("Create Subject") %>
+<% end %>
+
+
+<% @subjects.each do |subject|  %>
+  <%= link_to(subject.subject, subject) %>
+  <% end %>
+
+
+
+
+
+
+
+
+
