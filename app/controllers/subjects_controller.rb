@@ -7,7 +7,7 @@ class SubjectsController < ApplicationController
   def show
     @subject = Subject.find(params[:id])
     @quiz = Quiz.new
-    @quizzes = Quiz.all
+    @quizzes = @subject.quizzes
   end
 
   #find(:all, :select => 'id')
