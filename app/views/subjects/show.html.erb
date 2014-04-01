@@ -5,9 +5,9 @@
 
 <%= form_for([@subject, @quiz]) do |f| %>
 <!-- /subjects/:subject_id/quizzes POST -->
-  <%= label_tag(:quiz_question, "Question") %>
+  <%= label_tag(:quiz_question, "Command Description") %>
   <%= f.text_field(:quiz_question) %>
-  <%= label_tag(:correct_answer, "Answer") %>
+  <%= label_tag(:correct_answer, "Command") %>
   <%= f.text_field(:correct_answer) %>
   <%= submit_tag("Add Command") %>
 <% end %>

@@ -1,5 +1,13 @@
 class QuizzesController < ApplicationController
 
+  def index
+  end
+
+  def create
+  end
+
+  end
+
   def create
 
     @subject = Subject.find(params[:subject_id])
@@ -16,7 +24,7 @@ class QuizzesController < ApplicationController
   # ])
 
   #   if quiz.save
-  #     redirect_to(:action => 'index') #redirect to index methid
+  #     redirect_to(:action => 'index') #redirect to index method
   #   else
   #     redirect_to(:action => 'new') #redirect to new method
   #   end
@@ -31,7 +39,6 @@ class QuizzesController < ApplicationController
   end
 
 
-end
 
 
 

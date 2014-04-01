@@ -1,4 +1,8 @@
 class UserSessionsController < ApplicationController
+
+  def index
+  end
+
   def new
   end
 
@@ -7,10 +11,16 @@ class UserSessionsController < ApplicationController
 
     if user && user.authenticate(params[:password])
     session[:user_id] = user.id
-    flash[:success] = "thanks for logging in! When you come back you'll see your personalized quiz."
+    flash[:success] = "thanks for logging in!"
     redirect_to subjects_path
     else
-      render action 'new'
+      flash[:error] = "sorry we couldn't log you in"
+      render(:new)
    end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to(root_path)
   end
 end
