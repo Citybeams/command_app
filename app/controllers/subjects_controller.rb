@@ -1,6 +1,5 @@
 class SubjectsController < ApplicationController
 
-
   def index
     @subjects = Subject.all
   end
@@ -11,6 +10,10 @@ class SubjectsController < ApplicationController
     @quizzes = Quiz.all
   end
 
+  #find(:all, :select => 'id')
+  #pluck(:id)
+
+
   def new
     @subject = Subject.new
   end
@@ -18,7 +21,7 @@ class SubjectsController < ApplicationController
   def create
     subject = Subject.new(subject_params) #creates subject object, subject_params calls subject params in private
     if subject.save
-      redirect_to(:action => 'index') #redirect to index methid
+      redirect_to(:action => 'index') #redirect to index method
     else
       redirect_to(:action => 'new') #redirect to new method
     end
