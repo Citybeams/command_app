@@ -1,7 +1,7 @@
 <%# @subject = Subject.find(params[:id]) %>
 <h1><%= @subject.subject %></h1>
 
-
+<div class="quiz">
 <%= form_for([@subject, @quiz]) do |f| %>
 <!-- /subjects/:subject_id/quizzes POST -->
   <%= label_tag(:quiz_question, "Command Description") %>
@@ -12,11 +12,13 @@
 <% end %>
 
 
+
 <% @quizzes.each do |question|  %>
   <%= link_to "quiz", edit_subject_quiz_path(question.subject, question) %>
-  <%= question.quiz_question %>
+  <%= question.quiz_question %> :
   <%= question.correct_answer.answer_text %><br/>
 <% end %>
+</div>
 
 
 
