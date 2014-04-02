@@ -60,8 +60,9 @@ group :development do
   gem "rails-erd"
 end
 
-
 gem 'rails_12factor', group: :production
+
+gem 'ruby' '2.1.1'
 
 
 
