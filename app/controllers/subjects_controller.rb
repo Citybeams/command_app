@@ -10,10 +10,6 @@ class SubjectsController < ApplicationController
     @quizzes = @subject.quizzes
   end
 
-  #find(:all, :select => 'id')
-  #pluck(:id)
-
-
   def new
     @subject = Subject.new
   end

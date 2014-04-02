@@ -15,7 +15,7 @@
 
 <% @quizzes.each do |question|  %>
   <%= link_to "quiz", edit_subject_quiz_path(question.subject, question) %>
-  <%= question.quiz_question %> :
+  <strong><%= question.quiz_question %></strong> :
   <%= question.correct_answer.answer_text %><br/>
 <% end %>
 </div>
