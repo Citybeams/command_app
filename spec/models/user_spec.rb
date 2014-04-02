@@ -51,5 +51,15 @@ end
       expect(user.save).to be_true
       expect(user.email).to eq("nick2653@aol.com")
     end
-  end
+
+
+    end
+
+    describe "admin" do
+      it "is not an admin by default" do
+        user = User.new(valid_attributes)
+        expect( user ).not_to be_admin
+      end
+    end
+
 end

@@ -1,6 +1,5 @@
 <%# @subject = Subject.find(params[:id]) %>
 <h1><%= @subject.subject %></h1>
-<%= link_to "Create Quiz", new_quiz_path %>
 
 
 <%= form_for([@subject, @quiz]) do |f| %>
@@ -12,9 +11,11 @@
   <%= submit_tag("Add Command") %>
 <% end %>
 
+
 <% @quizzes.each do |question|  %>
+  <%= link_to "quiz", edit_subject_quiz_path(question.subject, question) %>
   <%= question.quiz_question %>
-  <%= question.correct_answer %><br/>
+  <%= question.correct_answer.answer_text %><br/>
 <% end %>
 
 

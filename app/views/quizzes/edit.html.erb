@@ -1,0 +1,19 @@
+<p>How do you...
+<%= @quiz.quiz_question %>
+<br/><%= @quiz.correct_answer.answer_text %>
+<% @quiz.answers.each do |answer| %>
+  <br/><%= answer.answer_text %>
+<% end %>
+
+<%= form_for([@subject, @quiz]) do |f| %>
+
+  <%= label_tag 'Wrong Answer 1' %>
+  <%= text_field_tag 'answer[]' %>
+  <%= label_tag 'Wrong Answer 2' %>
+  <%= text_field_tag 'answer[]' %>
+  <%= label_tag 'Wrong Answer 3' %>
+  <%= text_field_tag 'answer[]' %>
+  <%= submit_tag 'Submit' %>
+<% end %>
+
+

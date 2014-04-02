@@ -5,11 +5,32 @@ class QuizzesController < ApplicationController
 
 
   def create
-    @subject = Subject.find(params[:subject_id])
-    quiz = Quiz.new(quiz_params)
+    subject = Subject.find(params[:subject_id])
+    parameters = quiz_params
+    correct_answer = Answer.create(:answer_text => parameters[:correct_answer])
+    parameters.delete 'correct_answer'
+    quiz = Quiz.create(:quiz_question => parameters[:quiz_question], :correct_answer => correct_answer)
     quiz.save
-    @subject.quizzes << quiz
+    subject.quizzes << quiz
+    redirect_to subject
   end
+
+  def edit
+    @quiz = Quiz.find(params[:id]) #:id is a param thats avail from the url that is passed into method
+    @subject = @quiz.subject
+  end
+
+  def update
+    quiz = Quiz.find(params[:id])
+    params[:answer].each do |answer|
+     quiz.answers << Answer.create(:answer_text => answer)
+    end
+    redirect_to quiz.subject
+  end
+
+
+
+
 
 
 # def create

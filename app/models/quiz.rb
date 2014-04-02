@@ -12,6 +12,7 @@
 
 class Quiz < ActiveRecord::Base
   belongs_to :subject
+  belongs_to :correct_answer, :class_name => 'Answer', :foreign_key => 'correct_answer'
   has_many :answers
   validates_presence_of :quiz_question
   validates_presence_of :correct_answer

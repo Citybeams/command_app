@@ -2,9 +2,6 @@ CommandsApp::Application.routes.draw do
 
   resources :users
   resources :user_sessions
-  resources :new
-  resources :create
-  resources :quizzes
 
 
   root to: 'subjects#index'  #this is a route route; http://localhost:3000/ >> http://localhost:3000/subjects

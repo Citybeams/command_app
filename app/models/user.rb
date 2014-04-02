@@ -26,4 +26,8 @@ class User < ActiveRecord::Base
   def downcase_email   #method to downcase an email if user user capitals
     self.email = email.downcase
   end
+
+  def admin?
+    is_admin
+  end
 end
