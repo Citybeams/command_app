@@ -38,7 +38,7 @@ end
 
 
 
-    describe "#downcase_email" do
+    describe "downcase_email" do
       it "makes the email attribute lower case" do
         user = User.new(valid_attributes.merge(email: "NICKLOHR1@gmail.COM"))
         user.downcase_email
