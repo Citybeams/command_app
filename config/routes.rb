@@ -11,7 +11,7 @@ CommandsApp::Application.routes.draw do
   resources :subjects do
     resources :quizzes
   end
-  #nesting the route of quizzes within subjects
+  #nesting the route of quizzes within subjects; Nested routes allow you to capture the one to many relationship in your routing
 
  post '/quizzes(params[:id])' => 'subjects#show'
  post '/answers(params[:id])' => 'subjects#show'
